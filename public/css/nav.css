@@ -1,0 +1,86 @@
+/** 样式初始化
+  * 浏览器常规样式初始化
+  * el-loading样式调整
+  * el-loading-spinner样式调整
+  */
+
+  .nav {
+    width: 100%;
+    height: 60px;
+    min-width: 600px;
+    padding: 5px;
+    background-color: #2894FF;
+    color: #fff;
+    border-bottom: 1px solid #0072E3;
+  }
+  .logo-container {
+    line-height: 60px;
+    min-width: 400px;
+  }
+  .nav .logo {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+  .title {
+    vertical-align: middle;
+    font-size: 18px;
+    font-family: "Microsoft YaHei";
+    letter-spacing: 3px;
+  }
+  
+  .user {
+    line-height: 60px;
+    text-align: right;
+    padding-right: 10px;
+  }
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top:3px;
+    display: inline-block;
+  }
+  .welcome-content {
+    display: inline-block;
+    width: auto;
+    margin: 0 15px;
+  }
+  .content {
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+  .welcome {
+    font-size: 12px;
+  }
+  .username {
+    color: #F75000;
+    font-weight: bolder;
+  }
+  .dropdown {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin: 13px 33px 0 0;
+  }
+  ::v-deep .el-dropdown { 
+    color: #fff; 
+  }
+  .el-dropdown span {
+    background-color: #fff;
+    color: #000;
+    border-radius: 6px;
+  }
+  .dropdown i {
+    display:inline-block;
+    width: 26px;
+    height: 26px;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    padding-top:10px;
+  }
