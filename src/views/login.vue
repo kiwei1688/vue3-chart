@@ -35,7 +35,7 @@
           </el-form-item>
           <el-form-item>
             <!-- ruleFormRef : element-plus 校驗 -->
-            <el-button @click="handleSubmit(ruleFormRef)" class="submit-btn">{{ $t('login') }}sss</el-button>
+            <el-button @click="handleSubmit(ruleFormRef)" class="submit-btn">{{ $t('login') }}</el-button>
           </el-form-item>
 
           <div class="tiparea">
