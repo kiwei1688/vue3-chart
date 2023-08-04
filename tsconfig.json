@@ -12,7 +12,9 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "noEmit": true,
-    "allowJs": true // ts編譯build設定
+    "allowJs": true, // ts編譯build設定
+    "types": ["vue-router", "vite/client"],
+    "forceConsistentCasingInFileNames": false, // 解決deploy
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]

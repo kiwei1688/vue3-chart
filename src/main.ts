@@ -4,6 +4,14 @@ import router from './router'
 // import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
+// require('dotenv').config({ path: '.env' });
+
+// 導入css
+import '../public/css/reset.css'
+import '../public/css/common.css'
+import '../public/css/content.css'
+import '../public/css/nav.css'
+
 // 使用element-plus icons
 import icons from './utils/icons'
 // 語系

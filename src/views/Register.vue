@@ -68,6 +68,10 @@
             <!-- ruleFormRef : element-plus 校驗 -->
             <el-button @click="handleSubmit(ruleFormRef)" class="submit-btn">註冊</el-button>
           </el-form-item>
+
+          <div class="tiparea">
+            <p>{{ $t('hasAcc') }}<router-link to="/login">{{ $t('login') }}</router-link></p>
+          </div>
         </el-form>
       </div>
     </section>

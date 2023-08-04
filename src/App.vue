@@ -12,7 +12,8 @@ import { useAuthStore } from './store'
 import { userType } from './utils/types'
 // element-plus lang
 import { ElConfigProvider } from 'element-plus'
-import zh_cn from 'element-plus/lib/locale/lang/zh-cn'
+// import zh_cn from 'element-plus/lib/locale/lang/zh-cn'
+import zh_cn from 'element-plus/es/locale/lang/zh-cn' // 解決element-plu版本編譯失敗問題
 
 // global Loading component
 import Loading from './components/loading.vue'

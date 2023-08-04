@@ -22,7 +22,10 @@
   import { onMounted } from 'vue'
   import axios from '../utils/https';
   // header
+  // @ts-ignore
   import navBar from '../components/navBar.vue';
+  // @ts-ignore
+  import sideBar from '../components/sideBar.vue';
 
   onMounted(async () => {
     const userPath = "/api/users/current";

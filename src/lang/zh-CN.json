@@ -18,6 +18,7 @@
   "lang": "语系",
   "mail": "信箱",
   "noAcc": "还没有帐号? 现在",
+  "hasAcc": "已有帐号? 现在",
   "filterTime": "时间筛选",
   "startTime": "选择开始时间",
   "endTime": "选择结束时间",

@@ -43,15 +43,16 @@ div.content-wrap
     }   
   })  
 
-  const FullName = computed({
-    get() {
-      return `${firstName.value} ~~ ${lastName.value}`
-    },
-    set(newVal:string) {
-      console.log('=====', newVal)
-      [firstName.value, lastName.value] = newVal.split(' ')
-    }
-  })
+  const FullName = computed(() => `${firstName.value} ~~ ${lastName.value}`)
+  // const FullName = computed({
+  //   get() {
+  //     return `${firstName.value} ~~ ${lastName.value}`
+  //   },
+  //   set(newVal:string) {
+  //     console.log('=====', newVal)
+  //     [firstName.value, lastName.value] = newVal.split(' ')
+  //   }
+  // })
  
   const change = () => firstName.value = 'SomeOne Else'
 </script>

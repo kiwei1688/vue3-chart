@@ -119,7 +119,7 @@
           // 新增數據
           await axios.post(`/api/profiles/${url}`, formData.value)
           // @ts-ignore
-          ElMessage.success(!props.getEditData?._id ? t("editOK") : t("addOK"))
+          ElMessage.success(!props.getEditData?._id ? t("addOK") : t("editOK"))
           // 父層 重新拉取新增後的數據
           emits('handleUpdateProfiles')
           // 關閉彈窗

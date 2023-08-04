@@ -18,6 +18,7 @@
   "lang": "Language",
   "mail": "mailbox",
   "noAcc": "No account yet? Now",
+  "hasAcc": "Already have an account? Now",
   "filterTime": "Time filter",
   "startTime": "Select start time",
   "endTime": "Select end time",

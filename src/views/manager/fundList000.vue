@@ -102,8 +102,6 @@ DialogModal(
 </template>
 
 <script type="module" setup lang="ts">
-  // @ts-ignore
-  import DialogModal from '../../components/DialogModal.vue'
   import { 
     ref, 
     watchEffect,
@@ -181,7 +179,6 @@ DialogModal(
 
   // try {
       // proxy.$loading.show('LOADING')
-    
     const tableApi = "/api/profiles";
     // api取得數據
     const getData = async () => {
