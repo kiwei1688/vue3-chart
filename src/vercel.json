@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/api/:path(.*)", "destination": "https://www.thenewstep.cn/backend/8007" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
