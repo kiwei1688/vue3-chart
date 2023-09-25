@@ -21,9 +21,25 @@ import load from './utils/load'
 // 引入pinia
 import { createPinia } from 'pinia'
 
+// import common from '@/utils/common'
+
 const app = createApp(App)
 // 註冊pinia
 const pinia = createPinia()
+
+// 全域使用filter
+app.config.globalProperties.$filters = {
+    currencyUSD(value:any) {
+      return '$' + value
+    }
+  }
+
+//
+// app.mixin({
+//   methods: {
+//     ...common
+//   }
+// })
 
 // 全域 icons組件
 for(const [key,value] of Object.entries(icons)) {

@@ -13,27 +13,9 @@ div.info-container
             i.fa.fa-user
             span 姓 名 :
             span {{ store.user.name }}
-          div.user-item
-            i.fa.fa-envelope
-            span 信 箱 :
-            span roy6874ya@yahoo.com.tw
-          div.user-item
-            i.fa.fa-phone
-            span 手 機 :
-            span 0977098***
-          div.user-item
-            i.fa.fa-cog
-            span 身 份 :
-            span {{ store.user.identity === 'manager' ? '管理者' : '員 工' }}
-          div.user-item
-            i.fa.fa-file-text
-            span 描 述 :
-            span welcome come to my Vue3 website!!!
 </template>
 
 <script type="module" setup lang="ts">
-import{ useAuthStore } from '../../store'
-const store = useAuthStore();
   
 </script>
 

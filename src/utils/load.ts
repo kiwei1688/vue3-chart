@@ -9,11 +9,9 @@ const options = reactive({
   txt: 'Loading.....'
 })
 
-//部位options 是向Loading 組件傳遞的參數
 const $loading= createApp(Loading, {options}).mount(divDom)
 
 const loadPlugin = {
-  // 控制顯示loading的方法,show方法傳入的對象
   show(txt: any) {
     options.showToast = true
     options.txt = txt
@@ -27,7 +25,6 @@ const loadPlugin = {
 
 export default {
   install(app:any) {
-    // 3.0的全域掛載
     app.config.globalProperties.$loading = loadPlugin
   }
 }

@@ -1,7 +1,7 @@
 <template lang="pug">
 div.index-container
   div.index-content
-    h1.title {{ $t('roy') }}
+    h1.title Hello world
     p.lead {{ $t('sysName') }}
 </template>
 
@@ -9,7 +9,7 @@ div.index-container
  import { onMounted } from 'vue'
 
  onMounted(() => {
-    console.log('~~~~~~ OK的', import.meta.env.VITE_API_URL, import.meta.env.VITE_APP_ID)
+    console.log(import.meta.env.VITE_API_URL, import.meta.env.VITE_APP_ID)
   })
 </script>
 

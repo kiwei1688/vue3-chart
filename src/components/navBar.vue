@@ -6,24 +6,9 @@ nav.nav
       span.tilte {{ $t('sysName') }}
     el-col.user(:span="12")
       div.userinfo
-        img.avatar(v-if="store.user.avatar" src="../../public/img/avatar.jpg")
-        img.avatar(v-else src="../../public/img/avatar02.jpg")
         div.welcome-content
           p.content.welcome {{ $t('welcome') }}
           p.content.username {{ store.user.name }}
-        
-        // 語系切換
-        span.dropdown
-          // @command對應下方,點後傳遞字串info | logout參數給handleDropDown
-          el-dropdown(trigger="click" @command="handleLang")
-            span.el-dropdown-link
-              el-icon
-                | {{ $t(`language.${langKey}`) }}
-            template(#dropdown)
-              el-dropdown-menu
-                el-dropdown-item(command="zh-TW") {{ $t('language.zh-TW') }}
-                el-dropdown-item(command="zh-CN") {{ $t('language.zh-CN') }}
-                el-dropdown-item(command="zh-EN") {{ $t('language.zh-EN') }}
 
         // 設定zone
         span.dropdown
@@ -57,19 +42,7 @@ nav.nav
   const reload = inject<any>('reload')
   const store = useAuthStore();
   const { locale, t } = useI18n()
-  // 切換對應語系
-  const langKey = ref(localStorage.getItem('lang'))
 
-  // 切換語系
-  const handleLang = (item:string) => {
-    localStorage.setItem('lang', item)
-    locale.value = item // 更新語系
-    langKey.value = localStorage.getItem('lang')
-    console.log('#######', langKey.value)
-    // reload()
-  }
-
-  // 處理登出 & 用戶訊息
   const handleDropDown = (item:string) => {
     switch (item) {
       case "info":

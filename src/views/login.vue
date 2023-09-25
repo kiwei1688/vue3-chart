@@ -1,50 +1,37 @@
 <template>
 <div class="login">
-    <section class="form-container">
-      <div class="manage-tip">
-        <span class="title">{{ $t('sysName') }}</span>
-        <el-form
-          :rules="rules"
-          ref="ruleFormRef"
-          :model="loginUser"
-          class="loginForm"
-          label-width="80px"
-        >
-          <el-form-item :label="$t('mail')" prop="email">
-            <el-input
-              v-model="loginUser.email"
-              :placeholder="$t('keyMail')"
-            ></el-input>
-          </el-form-item>
-          <el-form-item :label="$t('password')" prop="password">
-            <el-input
-              v-model="loginUser.password"
-              :placeholder="$t('keyPW')"
-              type="password"
-            ></el-input>
-          </el-form-item>
-          <el-form-item :label="$t('lang')">
-            <el-select v-model="langData.lang" @change="handleChgLang">
-              <el-option 
-                v-for="(item, index) in langList"
-                :key="index" 
-                :label="$t(`language.${item}`)"
-                :value="item"
-              ></el-option>
-            </el-select>
-          </el-form-item>
-          <el-form-item>
-            <!-- ruleFormRef : element-plus 校驗 -->
-            <el-button @click="handleSubmit(ruleFormRef)" class="submit-btn">{{ $t('login') }}</el-button>
-          </el-form-item>
-
-          <div class="tiparea">
-            <p>{{ $t('noAcc') }}<router-link to="/register">{{ $t('register') }}</router-link></p>
-          </div>
-        </el-form>
-      </div>
-    </section>
-  </div>
+  <section class="form-container">
+    <div class="manage-tip">
+      <span class="title">{{ $t('sysName') }}</span>
+      <el-form
+        :rules="rules"
+        ref="ruleFormRef"
+        :model="loginUser"
+        class="loginForm"
+        label-width="80px"
+      >
+        <el-form-item :label="$t('mail')" prop="email">
+          <el-input
+            v-model="loginUser.email"
+            :placeholder="$t('keyMail')"
+          ></el-input>
+        </el-form-item>
+        <el-form-item :label="$t('password')" prop="password">
+          <el-input
+            v-model="loginUser.password"
+            :placeholder="$t('keyPW')"
+            type="password"
+          ></el-input>
+        </el-form-item>
+        
+        <el-form-item>
+          <!-- ruleFormRef : element-plus 校驗 -->
+          <el-button @click="handleSubmit(ruleFormRef)" class="submit-btn">{{ $t('login') }}</el-button>
+        </el-form-item>
+      </el-form>
+    </div>
+  </section>
+</div>
 </template>
 
 <script setup lang="ts">
@@ -61,6 +48,8 @@
   import { useRouter } from 'vue-router';
   // 切換lang
   import { useI18n } from 'vue-i18n'
+  // 導入mock api
+  import Mock from '../mock'
 
   const { locale, t } = useI18n()
   const langList = ref(['zh-TW', 'zh-CN', 'zh-EN'])
@@ -68,7 +57,6 @@
   const langData = ref<any>({
     lang: 'zh-TW'
   })
-  //請參考https://element-plus.org/en-US/component/form.html#validation
   const ruleFormRef = ref<FormInstance>()
   const router = useRouter();
   const store = useAuthStore();
@@ -100,7 +88,7 @@
     locale.value = langData.value.lang
 
   }
-//const tokenDecode= ref<string |null >('')
+
   // 驗證表單註冊規則
   const handleSubmit = (formEl: FormInstance | undefined) => {
     // 寫入local 語系
@@ -111,22 +99,20 @@
     formEl.validate(async (valid: boolean) => {
       if(valid) {
         const apiPath = "/api/users/login";
+
         try {
           const { 
-            data: {success, token, msg},
+            data: {success, token},
           } = await axios.post(apiPath, loginUser.value);
- 
+    
           const Member = JSON.parse(localStorage.getItem('memberInfo') || '{}');
 
           // 登入成功
           if(success && token) {
+            // 更新本地端token
             localStorage.setItem('memberInfo', JSON.stringify({...Member, token}))
             store.setToken(token)
 
-            // 解析token 存至pinia(狀態管理) 全局使用
-           // tokenDecode.value = jwt_decode(token)
-            //console.log(tokenDecode)
-            // 更新pinia state數據
             store.setAuth(!!jwt_decode(token)); // 更新boolean
             store.setUser(jwt_decode(token));
           
@@ -141,7 +127,7 @@
         } catch(err:any) {
           console.error('err', err)
           console.error('err.response.data.msg',err.response.data.msg)
-          // @ts-ignore 不檢測ts
+          // @ts-ignore
           ElMessage({
             message: err.response.data.msg,
             type: 'error',

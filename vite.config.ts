@@ -34,13 +34,10 @@ export default defineConfig(({command, mode, ssrBuild}) => {
     },
     // 配置反向代理解決跨域問題
     server: {
-      // proxy: {
-      //   "/api": "https://www.thenewstep.cn/backend/8007"
-      // }
       cors: true,
       proxy: {
         "/api": {
-          target: env.VITE_API_URL,
+          target: 'https://www.thenewstep.cn/backend/8007',
           changeOrigin: true,
           ws: true,
           rewrite: (path) => path.replace(/^\/store/, '') 

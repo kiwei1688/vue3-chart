@@ -1,9 +1,6 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router'
 import i18n from '../plugins/i18n'
 const { global: { t } } = i18n
-// import { useAuthStore } from '../store'
-// const router = useRouter();
-// const store = useAuthStore()
 
 // 定義路由
 const routes: Array<RouteRecordRaw> = [
@@ -99,15 +96,6 @@ const routes: Array<RouteRecordRaw> = [
       }
     ]
   },
-  { // 註冊
-    path: "/register",
-    name: "Register",
-    // @ts-ignore
-    component: () => import("../views/Register.vue"),
-    meta: {
-      title: "註 冊"
-    },
-  },
   { // 登入
     path: "/login",
     name: "Login",
@@ -126,16 +114,13 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(), // 採用history模式 router不會有#
+  history: createWebHistory(),
   routes
 })
 
 // 路由守衛
 router.beforeEach((to, from, next) => {
-  //這裡可以加 i18n
   document.title = to.meta.title ? `Roy-${to.meta.title}` : 'Roy'
-  // document.title = `Roy -We${to.meta.title}` ? `Roy -Web` : 'Roy'
-  // const isLogin:Boolean = localStorage.token ? true : false;
   const { token } = JSON.parse(localStorage.getItem('memberInfo') || '{}');
 
   if(to.path === '/login' || to.path === '/register') {
