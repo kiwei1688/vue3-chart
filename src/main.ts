@@ -20,9 +20,10 @@ import i18n from './plugins/i18n'
 import load from './utils/load'
 // 引入pinia
 import { createPinia } from 'pinia'
+// vue3-apexcharts
+import VueApexCharts from "vue3-apexcharts"
 
 // import common from '@/utils/common'
-
 const app = createApp(App)
 // 註冊pinia
 const pinia = createPinia()
@@ -34,13 +35,6 @@ app.config.globalProperties.$filters = {
     }
   }
 
-//
-// app.mixin({
-//   methods: {
-//     ...common
-//   }
-// })
-
 // 全域 icons組件
 for(const [key,value] of Object.entries(icons)) {
     app.component(key,value)
@@ -48,6 +42,8 @@ for(const [key,value] of Object.entries(icons)) {
 
 // app.use(ElementPlus)
 app.use(i18n)
+// @ts-ignore
+app.use(VueApexCharts)
 app.use(load)
 app.use(pinia)
 app.use(router)

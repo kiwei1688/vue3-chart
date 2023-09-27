@@ -24,6 +24,7 @@ declare module '@vue/runtime-core' {
     ElIconCoin: typeof import('@element-plus/icons-vue')['Coin']
     ElIconCreditCard: typeof import('@element-plus/icons-vue')['CreditCard']
     ElIconDocumentCopy: typeof import('@element-plus/icons-vue')['DocumentCopy']
+    ElIconDocumentCoyp: typeof import('@element-plus/icons-vue')['DocumentCoyp']
     ElIconHomeFilled: typeof import('@element-plus/icons-vue')['HomeFilled']
     ElIconMoney: typeof import('@element-plus/icons-vue')['Money']
     ElIconMonitor: typeof import('@element-plus/icons-vue')['Monitor']

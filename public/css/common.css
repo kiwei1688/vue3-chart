@@ -109,6 +109,106 @@
     top:3px;
   }
 
+  .content-wrap .content-inner .content-box {
+    margin: 20px 0
+  }
+
+  .content-wrap .content-inner .content-box .charts {
+    border: 1px solid #d4d4d4;
+    box-shadow: 0 2px 6px 0 #E0E0E0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .content-wrap .content-inner .content-box .charts:not(:first-child) {
+    margin-top: 25px;
+  }
+
+  /* chart 單元item ============================== */
+  /* number zone */
+  .content-inner .content-box .member-zone,
+  .content-inner .content-box .info-zone {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .content-inner .content-box .member-zone .member-zone-item,
+  .content-inner .content-box .info-zone .info-zone-item {
+    width: 23%;
+    height: 90px;
+    margin: 10px;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  .content-inner .content-box .member-zone .member-zone-item.orange { background-color:#FF9224; }
+  .content-inner .content-box .member-zone .member-zone-item.blue { background-color: #2894FF; }
+  .content-inner .content-box .member-zone .member-zone-item.gray { background-color: #9d9d9d; }
+  .content-inner .content-box .member-zone .member-zone-item.green { background-color: #00BB00; }
+  .content-inner .content-box .member-zone .member-zone-item.red { background-color: #FF7575; }
+
+  .content-inner .content-box .member-zone .member-zone-item:first-child,
+  .content-inner .content-box .info-zone .info-zone-item:first-child {
+    margin-left: 0;
+  }
+  .content-inner .content-box .member-zone .member-zone-item:last-child,
+  .content-inner .content-box .info-zone .info-zone-item:last-child {
+    margin-right: 0;
+  }
+  .content-box .member-zone .member-zone-item .member-title {
+    font-size: 18px;
+    padding: 17px 0;
+  }
+  .content-box .member-zone .member-zone-item .member-num {
+    font-size: 22px;
+  }
+
+  /* info zone */
+  .content-inner .content-box .info-zone .info-zone-item {
+    color: #333;
+    height: auto;
+    padding: 20px 10px;
+    text-align: left;
+    border: 1px solid #d4d4d4;
+    box-shadow: 0 2px 6px 0 #E0E0E0;
+  }
+
+  .content-inner .content-box .info-zone .info-zone-item .info-num .num{
+    font-size: 26px;
+  }
+
+  .content-inner .content-box .info-zone .info-zone-item .daily-num div {
+    height: 20px;
+  }
+
+  .content-inner .content-box .info-zone .info-zone-item .info-num,
+  .content-inner .content-box .info-zone .info-zone-item .daily-num div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .content-inner .content-box .info-zone .info-zone-item .info-num .percentage {
+    color: red;
+  }
+
+  .content-inner .content-box .info-zone .info-zone-item .daily-num .percentage {
+    color: green;
+  }
+
+  .apexcharts-legend { 
+    position: unset !important;
+  }
+
+  .apexcharts-title-text {
+    border: 1px solid red;
+  }
+
+  .apexcharts-legend.apx-legend-position-top.apexcharts-align-right {
+    justify-content: center !important;
+  }
+
   /* table data ============================ */
   .content-inner .tab_wrap {
     /* display: flex; */
